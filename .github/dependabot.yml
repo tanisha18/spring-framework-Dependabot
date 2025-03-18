@@ -5,7 +5,15 @@
 
 version: 2
 updates:
-  - package-ecosystem: "maven" # See documentation for possible values
-    directory: "/" # Location of package manifests
+  - package-ecosystem: "maven"    # Specify the package manager (Maven)
+    directory: "/"                 # The directory containing the pom.xml (usually root)
+    schedule:
+      interval: "weekly"           # Frequency of updates (can be "daily", "weekly", or "monthly")
+    ignore:
+      - dependency-name: "org.springframework.boot"
+        versions: ["2.3.0", "2.3.1"]  # Example: Ignore specific versions of Spring Boot
+  - package-ecosystem: "maven"
+    directory: "/libs"             # Specify a subdirectory if your pom.xml is in a different folder
     schedule:
       interval: "weekly"
+
