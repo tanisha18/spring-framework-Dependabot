@@ -5,7 +5,7 @@
 
 version: 2
 updates:
-  - package-ecosystem: "maven"    # Specify the package manager (Maven)
+  - package-ecosystem: "gradle"    # Specify the package manager (Maven)
     directory: "/"                 # The directory containing the pom.xml (usually root)
     schedule:
       interval: "weekly"           # Frequency of updates (can be "daily", "weekly", or "monthly")
