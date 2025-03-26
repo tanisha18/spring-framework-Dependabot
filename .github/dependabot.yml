@@ -5,31 +5,29 @@
 
 version: 2
 updates:
-  - package-ecosystem: "gradle"    # Specify the package manager (Maven)
-    directory: "/"                 # The directory containing the pom.xml (usually root)
+  - package-ecosystem: "gradle"    # Specify the package manager (Gradle)
+    directory: "/"                 # The directory containing build.gradle or pom.xml
     schedule:
-      interval: "daily"           # Frequency of updates (can be "daily", "weekly", or "monthly")
-    open-pull-requests-limit: 5  # Prevent too many PRs
+      interval: "daily"             # Frequency of updates (can be "daily", "weekly", or "monthly")
+    open-pull-requests-limit: 5     # Prevent too many PRs
     commit-message:
       prefix: "chore(deps):"
-      include: "scope"  # Adds package name to commit messages
-    rebase-strategy: "auto"  # Auto-rebase PRs when conflicts occur
+      include: "scope"              # Adds package name to commit messages
+    rebase-strategy: "auto"         # Auto-rebase PRs when conflicts occur
     versioning-strategy: "increase-if-necessary"  # Avoid unnecessary updates  
+
     ignore:
       - dependency-name: "org.springframework.boot"
         versions: ["2.3.0", "2.3.1"]  # Example: Ignore specific versions of Spring Boot
-     labels:
+
+    labels:  # Corrected indentation
       - "dependencies"
       - "gradle"
       - "security-update"
+
     reviewers:
-      - ""
-     labels:
-      - "dependencies"
-      - "gradle"
-      - "security-update"
-    reviewers:
-      - "ShivaniModanwal"
+      - "ShivaniModanwal"  # Fixed extra empty reviewer
+
     groups:
       spring-boot-dependencies:
         patterns:
@@ -38,7 +36,6 @@ updates:
         patterns:
           - "junit*"
           - "mockito*"
+
     allow:
-      - dependency-type: "security"  
-
-
+      - dependency-type: "security"
