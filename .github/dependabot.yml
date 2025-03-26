@@ -12,8 +12,4 @@ updates:
     ignore:
       - dependency-name: "org.springframework.boot"
         versions: ["2.3.0", "2.3.1"]  # Example: Ignore specific versions of Spring Boot
-  - package-ecosystem: "gradle"
-    directory: "/libs"             # Specify a subdirectory if your pom.xml is in a different folder
-    schedule:
-      interval: "daily"
 
