@@ -14,19 +14,18 @@ updates:
       prefix: "chore(deps):"
       include: "scope"              # Adds package name to commit messages
     rebase-strategy: "auto"         # Auto-rebase PRs when conflicts occur
-    versioning-strategy: "increase-if-necessary"  # Avoid unnecessary updates  
 
     ignore:
       - dependency-name: "org.springframework.boot"
         versions: ["2.3.0", "2.3.1"]  # Example: Ignore specific versions of Spring Boot
 
-    labels:  # Corrected indentation
+    labels:
       - "dependencies"
       - "gradle"
       - "security-update"
 
     reviewers:
-      - "ShivaniModanwal"  # Fixed extra empty reviewer
+      - "ShivaniModanwal"
 
     groups:
       spring-boot-dependencies:
@@ -38,4 +37,4 @@ updates:
           - "mockito*"
 
     allow:
-      - dependency-type: "security"
+      - dependency-type: "all"  # Changed from "security" to "all"
